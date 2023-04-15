@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Recetas</title>
+</head>
+<body>
+	<h1 style="text-align: center;">Recetas</h1>
+<table style="border: 1px solid black; padding: 1px; margin: auto;">
+  <tr>
+    <th style="border: 1px solid black;">#</th>
+    <th style="border: 1px solid black;">Titulo</th>
+    <th style="border: 1px solid black;">Ingredientes</th>
+    <th style="border: 1px solid black;">Preparacion</th>
+    <th style="border: 1px solid black;">Autor</th>
+  </tr>
+  {%for autor in receta%}
+  	{%for recetas in autor.receta_set.all%}
+  <tr>
+    <td style="border: 1px solid black;">{{recetas.id}}</td>
+    <td style="border: 1px solid black;">{{recetas.titulo}}</td>
+    <td style="border: 1px solid black;">{{recetas.ingredientes}}</td>
+    <td style="border: 1px solid black;">{{recetas.preparacion}}</td>
+    <td style="border: 1px solid black;">{{recetas.autor}}</td>
+  </tr>
+	{%endfor%}
+	{%endfor%}
+
+</table>
+
+</body>
+</html>
